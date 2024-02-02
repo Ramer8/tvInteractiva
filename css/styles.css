@@ -1,94 +1,131 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: dimgray;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
-}
-
-#boxBackground {
-    padding: 0;
-    margin: 0;
 
     height: 100vh;
     width: 100vw;
+    background-color: dimgray;
+    font-family: "Trebuchet MS",
+        "Lucida Sans", Arial, sans-serif;
+
+    color: white;
 
     display: flex;
-
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1em;
+}
+
+header {
+    height: 5.2em;
+    width: 100%;
+    background-color: gray;
+}
+
+section {
+    height: 47.6em;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+footer {
+    height: 6.6em;
+    width: 100%;
+    background-color: indigo;
 }
 
 #frame {
-    width: 55em;
-    height: 40em;
+    width: 65em;
+    height: 44em;
     background-color: midnightblue;
-    padding: 1em 1em;
+    /* padding: 1em 1em; */
+
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     border: black solid 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
 
 }
 
 #leftSide {
-    width: 25em;
-    height: 65em;
+    width: 35em;
+    height: 44em;
 
-    flex-direction: column;
     display: flex;
+    background-color: gray;
 
-    background-color: aqua;
-}
-
-#rightSpace {
-    width: 5em;
-    height: 100em;
-    background-color: darkorange;
-
-}
-
-#upperSpace {
-    width: 25em;
-    height: 25em;
-    background-color: darkgoldenrod;
-    flex-direction: row;
-    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-}
-
-#center {
-    width: 25em;
-    height: 60vw;
-
-    background-color: brown;
-    flex-direction: column;
-    display: flex;
     justify-content: center;
+}
+
+#topLeft {
+    width: 32em;
+    height: 10em;
+    background-color: blueviolet;
+}
+
+#centerLeft {
+    width: 32em;
+    height: 30em;
+    background-color: black;
+    display: flex;
+
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+
 }
 
 #remote {
-    background-color: black;
-    width: 20em;
-    height: 50em;
-
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#bottomSpace {
-    background-color: violet;
-    width: 20em;
+    width: 7em;
     height: 30em;
-    align-items: center;
-    justify-content: center;
+    padding-left: 4em;
+    background-image: url("../img/mando.png");
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-size: contain;
+    border-radius: 2em;
+
 }
 
-#leftSpace {
+#bottomLeft {
+    width: 32em;
+    height: 10em;
+    background-color: blue;
+}
+
+.cuadrado {
     width: 5em;
-    height: 100em;
-    background-color: rosybrown;
+    height: 5em;
+    background-color: aquamarine;
+    border-radius: 1em;
+}
+
+.seleccionado1 {
+    background-color: green;
+}
+
+.seleccionado2 {
+    background-color: blueviolet;
+}
+
+.seleccionado3 {
+    background-color: red;
+}
+
+.seleccionado4 {
+    background-color: yellow;
 }
