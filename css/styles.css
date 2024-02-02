@@ -1,7 +1,94 @@
 body {
     padding: 0;
     margin: 0;
-    background: #000;
-font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-color: white;
+    background-color: dimgray;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+#boxBackground {
+    padding: 0;
+    margin: 0;
+
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+#frame {
+    width: 55em;
+    height: 40em;
+    background-color: midnightblue;
+    padding: 1em 1em;
+    justify-content: center;
+    align-items: center;
+    border: black solid 4px;
+
+}
+
+#leftSide {
+    width: 25em;
+    height: 65em;
+
+    flex-direction: column;
+    display: flex;
+
+    background-color: aqua;
+}
+
+#rightSpace {
+    width: 5em;
+    height: 100em;
+    background-color: darkorange;
+
+}
+
+#upperSpace {
+    width: 25em;
+    height: 25em;
+    background-color: darkgoldenrod;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#center {
+    width: 25em;
+    height: 60vw;
+
+    background-color: brown;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#remote {
+    background-color: black;
+    width: 20em;
+    height: 50em;
+
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bottomSpace {
+    background-color: violet;
+    width: 20em;
+    height: 30em;
+    align-items: center;
+    justify-content: center;
+}
+
+#leftSpace {
+    width: 5em;
+    height: 100em;
+    background-color: rosybrown;
 }
