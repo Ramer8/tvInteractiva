@@ -94,11 +94,6 @@ footer {
     transition: 0.2s;
 }
 
-.button:hover {
-    transition: 0.2s;
-    background-color: darkred;
-}
-
 .canal1 {
     background-image: url("../img/A\ todo\ gas.png");
     background-repeat: no-repeat;
@@ -121,50 +116,40 @@ footer {
     background-color: gold;
 }
 
-.off {
-    opacity: .8;
+.canal5 {
+    background-color: coral;
 }
 
-
-.cuadrado {
-    width: 2em;
-    height: 2em;
-    background-color: blue;
-    border-radius: 1em;
+.canal6 {
+    background-color: violet;
 }
 
-.seleccionado1 {
-    background-color: green;
+.canal7 {
+    background-color: forestgreen;
 }
 
-.seleccionado2 {
-    background-color: blueviolet;
+.canal8 {
+    background-color: indianred;
 }
 
-.seleccionado3 {
-    background-color: red;
+.canal9 {
+    background-color: orange;
 }
 
-.seleccionado4 {
+.canal10 {
     background-color: yellow;
 }
 
-.divDos {
-    padding-left: 2em;
-    padding-right: 2em;
+#screenTitle {
+    padding-inline: 2em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     line-height: 90%;
+    text-shadow: black 4px 0 10px;
 }
 
-#hora {
-    margin-top: 0em;
-    padding-top: -1em;
-    padding-left: 2em;
-
-}
 
 #remote {
     width: 10em;
@@ -210,6 +195,22 @@ footer {
     transition: 0.2s;
 }
 
+.circleButtons:hover {
+    transition: 0.2s;
+    opacity: .5;
+}
+
+.concave:hover {
+    transition: 0.2s;
+    opacity: .5;
+}
+
+.numbers:hover {
+    transition: 0.2s;
+    opacity: .5;
+}
+
+
 #power {
     background-color: brown;
 }
@@ -225,13 +226,13 @@ footer {
 }
 
 /* Ver si se puede agrandar la letra de los botones canal y vol */
-.top {
+/* .top {
     font-size: 1em;
 }
 
 .bottom {
     font-size: 1em;
-}
+} */
 
 .concave {
     border-top-left-radius: 1em;
@@ -285,3 +286,20 @@ footer {
     cursor: pointer;
     transition: 0.2s;
 }
+
+.powerOff {
+    background: black;
+}
+
+.start {
+    background-color: darkolivegreen;
+}
+
+/* .img {
+    width: auto;
+    margin-left: 0px;
+    width: 65em;
+    height: 44em;
+    border-radius: .4em;
+    overflow: hidden;
+} */
