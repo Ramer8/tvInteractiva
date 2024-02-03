@@ -43,6 +43,7 @@ footer {
 
 /* Frame es la pantalla del tv */
 #screen {
+    margin-left: 3em;
     width: 65em;
     height: 44em;
     border-radius: .4em;
@@ -56,9 +57,9 @@ footer {
 
 }
 
-#remote {
-    width: 20em;
-    height: 44em;
+#remote2 {
+    width: 5em;
+    height: 21em;
 
     background-image: url("../img/mando.png");
     background-repeat: no-repeat;
@@ -74,7 +75,7 @@ footer {
 
     background-color: khaki;
 
-    margin-left: 10em;
+
 }
 
 .button {
@@ -128,7 +129,7 @@ footer {
 .cuadrado {
     width: 2em;
     height: 2em;
-    background-color: aquamarine;
+    background-color: blue;
     border-radius: 1em;
 }
 
@@ -165,25 +166,17 @@ footer {
 
 }
 
-#remote2 {
+#remote {
     width: 10em;
     height: 40em;
-
-    /* background-image: url("../img/mando.png");
-    background-repeat: no-repeat;
-    background-attachment: local;
-    background-size: contain; */
-
-
-    /* display: flex; */
-    /* flex-direction: column;
-    justify-content: space-around;
-    align-items: center; */
+    margin-top: 5em;
+    margin-left: 10em;
+    margin-right: 5em;
 
     border-radius: 10em;
     background-color: black;
-    /* background: linear-gradient(black, rgba(128, 128, 128, 0.2), rgba(52, 52, 52, 0.028), rgba(169, 169, 169, 0.435), black); */
-    /* margin-left: 10em; */
+    background: linear-gradient(black, black, rgb(45, 45, 45),
+            rgb(45, 45, 45), rgb(45, 45, 45), rgb(31, 31, 31), black, black);
 }
 
 #buttonsTop {
@@ -191,9 +184,10 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: start;
+
     height: 8em;
     width: 10em;
-    background-color: blue;
+
     border-radius: 10em;
     padding-top: 3em;
 
@@ -227,12 +221,19 @@ footer {
     align-items: start;
     height: 8em;
     width: 10em;
-    background-color: green;
     border-radius: 10em;
 }
 
-.concave {
+/* Ver si se puede agrandar la letra de los botones canal y vol */
+.top {
+    font-size: 1em;
+}
 
+.bottom {
+    font-size: 1em;
+}
+
+.concave {
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
     height: 3.2em;
@@ -256,18 +257,26 @@ footer {
 
 #buttonsBottom {
     margin-top: 2.5em;
-    width: 10em;
-    height: 14em;
-    background-color: darkolivegreen;
+    margin: 2.5em 1em 1em 1em;
+    width: 8em;
+    height: 9em;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: start;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
 }
 
 .numbers {
-    border-radius: 90em;
-    background-color: red;
+
     height: 2em;
     width: 2em;
-    border-radius: 50%;
-    margin: .5em;
+    border-radius: 1em;
+
     background-color: gray;
 
     display: flex;
