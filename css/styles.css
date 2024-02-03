@@ -5,8 +5,7 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: dimgray;
-    font-family: "Trebuchet MS",
-        "Lucida Sans", Arial, sans-serif;
+    font-family: "Trebuchet MS", "Lucida Sans", Arial, sans-serif;
 
     color: white;
 
@@ -19,97 +18,116 @@ body {
 header {
     height: 5.2em;
     width: 100%;
-    background-color: gray;
+    background-color: whitesmoke;
 }
 
+/* Background de la habitación del tv */
 section {
     height: 47.6em;
     width: 100%;
 
+    background-color: whitesmoke;
+
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: white;
+
 }
 
+/* Footer es la mesa del tv */
 footer {
     height: 6.6em;
     width: 100%;
-    background-color: indigo;
+    background-color: goldenrod;
 }
 
-#frame {
+/* Frame es la pantalla del tv */
+#screen {
     width: 65em;
     height: 44em;
-    background-color: midnightblue;
-    /* padding: 1em 1em; */
+    border-radius: .4em;
 
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    border: black solid 4px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 2em;
-
+    border: grey solid 8px;
+    /* poner de color negro el borde luego */
 }
 
-#leftSide {
-    width: 35em;
-    height: 44em;
-
-    display: flex;
-    background-color: gray;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#topLeft {
-    width: 32em;
-    height: 10em;
-    background-color: blueviolet;
-}
-
-#centerLeft {
-    width: 32em;
-    height: 30em;
+.basicScreen {
     background-color: black;
-    display: flex;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
 }
 
 #remote {
-    width: 7em;
-    height: 30em;
-    padding-left: 4em;
+    width: 20em;
+    height: 44em;
+
     background-image: url("../img/mando.png");
     background-repeat: no-repeat;
     background-attachment: local;
     background-size: contain;
-    border-radius: 2em;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    border-radius: 0.5em;
+
+    background-color: khaki;
+
+    margin-left: 10em;
 }
 
-#bottomLeft {
-    width: 32em;
-    height: 10em;
-    background-color: blue;
+.button {
+
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+
+    background-color: red;
+
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
 }
+
+.button:hover {
+    transition: 0.2s;
+    background-color: darkred;
+}
+
+.canal1 {
+    background-image: url("../img/A\ todo\ gas.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+}
+
+.canal2 {
+    background-image: url("../img/imagen\ mundo.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+}
+
+.canal3 {
+    background-color: greenyellow;
+}
+
+.canal4 {
+    background-color: gold;
+}
+
+.off {
+    opacity: .8;
+}
+
 
 .cuadrado {
-    width: 5em;
-    height: 5em;
+    width: 2em;
+    height: 2em;
     background-color: aquamarine;
     border-radius: 1em;
 }

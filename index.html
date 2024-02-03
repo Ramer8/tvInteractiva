@@ -1,31 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="./img/tvIcon.svg" />
     <title>Tv📺 Intercativa</title>
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
-  </head>
+</head>
 
-  <body>
-    <header></header>
+<body>
+    <header>
+
+    </header>
     <section>
-      <div id="frame">
-        <div class="cuadrado" id="cuadrado1"></div>
-        <div class="cuadrado" id="cuadrado2"></div>
-        <div class="cuadrado" id="cuadrado3"></div>
-        <div class="cuadrado" id="cuadrado4"></div>
-      </div>
-      <div id="leftSide">
-        <div id="topLeft"></div>
-        <div id="centerLeft">
-          <div id="remote"></div>
+        <div id="screen" class="basicScreen">
+            <div id="divUno" hidden="true" style="background-color:green">
+                <p>Primer contenedor</p>
+            </div>
+            <div class="divDos" style="background-color:red">
+                <p>Segundo contenedor</p>
+            </div>
+            <!-- <input type="text" id="input1" placeholder="escribe aqui">
+            <button onclick="addHtml()">Añadir</button> -->
+            <div id="contenedor"></div>
+            <!-- <div id="contenedor1"></div> -->
+            <p id="hora"></p>
+        </div>
+        
+        <div id="remote">
+            <button onclick="change1()">Alterna</button>
+            <div class="cuadrado" id="cuadrado1">1</div>
+            <div class="cuadrado" id="cuadrado2">2</div>
+            <div class="cuadrado" id="cuadrado3">3</div>
+            <div class="cuadrado" id="cuadrado4">4</div>
+        </div>
+        <div id="leftSide">
         </div>
         <div id="bottomLeft"></div>
-      </div>
+        </div>
+
     </section>
     <footer></footer>
     <script src="./js/main.js"></script>
-  </body>
+</body>
+
 </html>
