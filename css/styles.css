@@ -226,13 +226,15 @@ footer {
 }
 
 /* Ver si se puede agrandar la letra de los botones canal y vol */
-/* .top {
+.volume {
     font-size: 1em;
+
+
 }
 
-.bottom {
+.channel {
     font-size: 1em;
-} */
+}
 
 .concave {
     border-top-left-radius: 1em;
@@ -293,6 +295,16 @@ footer {
 
 .start {
     background-color: darkolivegreen;
+}
+
+#volumeIcon {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    color: chartreuse;
+    transition: 0.2s;
+    font-size: 130%;
+    padding-right: 2em;
 }
 
 /* .img {
