@@ -2,31 +2,10 @@
 const VOLUMEN_TEXT_MSG_TIME = 2500
 let screen = document.getElementById("screen") // me trae el div con id frame
 
-function change() {
-  let div1 = document.getElementById("divUno")
-  let div2 = document.getElementsByClassName("divDos")
-  if (div1.hidden == true && div2[0].hidden == false) {
-    div1.hidden = false
-    div2[0].hidden = true
-  } else {
-    div1.hidden = true
-    div2[0].hidden = false
-  }
-}
-function addHtml() {
-  let escrito = document.getElementById("input1")
-  let objetoDiv = document.getElementById("contenedor")
-  let p = document.createElement("p")
-  p.innerHTML = escrito.value
-  console.log(p)
-  console.log(p.innerHTML)
-  escrito.value = ""
-  objetoDiv.appendChild(p)
-}
-
 setInterval(hora, 1000)
 
 function hora() {
+  const date = new Date().toLocaleDateString()
   let hora = new Date().getHours()
   let minutos = new Date().getMinutes()
   let segundos = new Date().getSeconds()
@@ -34,6 +13,7 @@ function hora() {
     segundos < 10 ? "0" : ""
   }${segundos}`
   document.getElementById("hora").innerHTML = time
+  document.getElementById("fecha").innerHTML = date
 }
 
 const screenHeader = document.getElementById("screenHeader")
@@ -46,7 +26,7 @@ power.addEventListener("click", (evento) => {
   if (powerOn) {
     console.log("encendido")
     screen.classList = []
-    screen.classList.add("start")
+    screen.classList.add("channel0")
   }
   if (!powerOn) {
     screen.classList = []
@@ -81,8 +61,9 @@ function buttonNumbers() {
     item.addEventListener("click", (evento) => {
       console.log("presionaste un nro")
       screen.classList.remove(screen.classList[screen.classList.length - 1])
+      console.log(screen.classList)
       console.log(evento.target.innerHTML)
-      screen.classList.add("canal" + evento.target.innerHTML)
+      screen.classList.add("channel" + evento.target.innerHTML)
 
       console.log(screen.classList)
     })
@@ -104,8 +85,6 @@ function volume() {
   const volumeButton = document.getElementsByClassName("volume")
 
   volumeButton[0].addEventListener("click", (evento) => {
-    console.log(evento.target.innerHTML)
-    // let volumeIcon = document.getElementById("volumeIcon")
     if (evento.target.innerHTML === "V +") {
       //Sube el volumen
       contVolume++
@@ -117,12 +96,11 @@ function volume() {
         contVolume--
         v = `🔊⬇ ${contVolume}`
       } else {
-        // v = "silencio 🔇 "
+        // Pone en "silencio 🔇 "
         setVolumeIcon()
         return
       }
     }
-    console.log(volumeIcon)
     setVolumeIcon()
   })
 }
@@ -150,3 +128,49 @@ muteButton.addEventListener("click", () => {
       (v = ` 🔊 ${contVolume}`),
       setVolumeIcon())
 })
+let channel
+let contChannel = 0
+channelButtons()
+function channelButtons() {
+  const channelButton = document.getElementsByClassName("channel")
+  console.log(channelButton[0])
+  channelButton[0].addEventListener("click", (evento) => {
+    //pregunta si es channel Up o down?
+    evento.target.innerHTML === "P +"
+      ? // Channel up , incrementa contador y copia valor a la clase channel
+        (channel(),
+        contChannel++,
+        screen.classList.add(`channel${contChannel}`),
+        (document.getElementById(
+          "channelInfo"
+        ).innerHTML = `Channel ${contChannel}`))
+      : // Channel Down, decrementa contador y copia a clase channel
+        (channel(),
+        contChannel--,
+        // Pregunta si canal es 0 para q no tenga valores negativos.
+        contChannel < 0
+          ? (console.log("es canal 0"),
+            console.log(screen.classList),
+            (contChannel = 9),
+            (document.getElementById(
+              "channelInfo"
+            ).innerHTML = `channel ${contChannel}`),
+            screen.classList.add(`Channel${contChannel}`))
+          : screen.classList.add(`Channel${contChannel}`),
+        (document.getElementById(
+          "channelInfo"
+        ).innerHTML = `channel ${contChannel}`))
+
+    function channel() {
+      console.log(screen.classList[0]),
+        // saca el ultimo caracter de screen.classList
+        (contChannel = screen.classList[0].substring(
+          screen.classList[0].length - 1,
+          screen.classList[0].length
+        )),
+        (screen.classList = [])
+      {
+      }
+    }
+  })
+}

@@ -31,7 +31,6 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 /* Footer es la mesa del tv */
@@ -46,7 +45,7 @@ footer {
     margin-left: 3em;
     width: 65em;
     height: 44em;
-    border-radius: .4em;
+    border-radius: 0.4em;
 
     border: grey solid 8px;
     /* poner de color negro el borde luego */
@@ -54,90 +53,52 @@ footer {
 
 .basicScreen {
     background-color: black;
-
 }
 
-#remote2 {
-    width: 5em;
-    height: 21em;
-
-    background-image: url("../img/mando.png");
-    background-repeat: no-repeat;
-    background-attachment: local;
-    background-size: contain;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-
-    border-radius: 0.5em;
-
-    background-color: khaki;
-
-
-}
-
-.button {
-
-    height: 2em;
-    width: 2em;
-    border-radius: 50%;
-
-    background-color: red;
-
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.canal1 {
-    background-image: url("../img/A\ todo\ gas.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: contain;
-}
-
-.canal2 {
+.channel0 {
     background-image: url("../img/imagen\ mundo.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;
 }
 
-.canal3 {
+.channel1 {
+    background-image: url("../img/A\ todo\ gas.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+}
+
+.channel2 {
+    background-color: darkslateblue;
+}
+
+.channel3 {
     background-color: greenyellow;
 }
 
-.canal4 {
+.channel4 {
     background-color: gold;
 }
 
-.canal5 {
+.channel5 {
     background-color: coral;
 }
 
-.canal6 {
+.channel6 {
     background-color: violet;
 }
 
-.canal7 {
+.channel7 {
     background-color: forestgreen;
 }
 
-.canal8 {
+.channel8 {
     background-color: indianred;
 }
 
-.canal9 {
+.channel9 {
     background-color: orange;
-}
-
-.canal10 {
-    background-color: yellow;
 }
 
 #screenTitle {
@@ -150,41 +111,52 @@ footer {
     text-shadow: black 4px 0 10px;
 }
 
+.date {
+    padding-top: 1em;
+    flex-direction: column;
+    display: flex;
+    line-height: 10%;
+    align-items: end;
+    justify-content: end;
+}
 
 #remote {
     width: 10em;
-    height: 40em;
-    margin-top: 5em;
+    height: 36em;
     margin-left: 10em;
     margin-right: 5em;
 
     border-radius: 10em;
     background-color: black;
-    background: linear-gradient(black, black, rgb(45, 45, 45),
-            rgb(45, 45, 45), rgb(45, 45, 45), rgb(31, 31, 31), black, black);
+    background: linear-gradient(black,
+            black,
+            rgb(45, 45, 45),
+            rgb(45, 45, 45),
+            rgb(45, 45, 45),
+            rgb(31, 31, 31),
+            black,
+            black);
 }
 
 #buttonsTop {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: start;
+    justify-content: space-evenly;
 
     height: 8em;
     width: 10em;
 
     border-radius: 10em;
-    padding-top: 3em;
-
+    padding-top: 2.5em;
+    border-radius: 90em;
 }
 
 .circleButtons {
-    border-radius: 90em;
     background-color: red;
     height: 3.2em;
     width: 3.2em;
     border-radius: 50%;
-    margin: .5em;
+    margin: 0.5em;
 
     background-color: gray;
 
@@ -192,24 +164,22 @@ footer {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: 0.2s;
 }
 
 .circleButtons:hover {
     transition: 0.2s;
-    opacity: .5;
+    opacity: 0.5;
 }
 
 .concave:hover {
     transition: 0.2s;
-    opacity: .5;
+    opacity: 0.5;
 }
 
 .numbers:hover {
     transition: 0.2s;
-    opacity: .5;
+    opacity: 0.5;
 }
-
 
 #power {
     background-color: brown;
@@ -222,18 +192,17 @@ footer {
     align-items: start;
     height: 8em;
     width: 10em;
-    border-radius: 10em;
 }
 
 /* Ver si se puede agrandar la letra de los botones canal y vol */
 .volume {
     font-size: 1em;
-
-
+    font-weight: bolder;
 }
 
 .channel {
     font-size: 1em;
+    font-weight: bolder;
 }
 
 .concave {
@@ -241,8 +210,10 @@ footer {
     border-top-right-radius: 1em;
     height: 3.2em;
     width: 3.2em;
-    margin: .5em;
-    font-size: 1.2em;
+    margin-top: 0.4em;
+    margin-top: .4em;
+    margin-inline: .4em;
+    font-size: 1.15em;
     background-color: gray;
 
     display: grid;
@@ -259,7 +230,6 @@ footer {
 }
 
 #buttonsBottom {
-    margin-top: 2.5em;
     margin: 2.5em 1em 1em 1em;
     width: 8em;
     height: 9em;
@@ -275,7 +245,6 @@ footer {
 }
 
 .numbers {
-
     height: 2em;
     width: 2em;
     border-radius: 1em;
@@ -305,13 +274,5 @@ footer {
     transition: 0.2s;
     font-size: 130%;
     padding-right: 2em;
+    text-shadow: black 4px 0 10px;
 }
-
-/* .img {
-    width: auto;
-    margin-left: 0px;
-    width: 65em;
-    height: 44em;
-    border-radius: .4em;
-    overflow: hidden;
-} */
