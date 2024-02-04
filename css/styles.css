@@ -276,3 +276,14 @@ footer {
     padding-right: 2em;
     text-shadow: black 4px 0 10px;
 }
+
+#channelInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    color: chartreuse;
+    transition: 0.2s;
+    font-size: 130%;
+    padding-right: 2em;
+    text-shadow: black 4px 0 10px;
+}
