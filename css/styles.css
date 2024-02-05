@@ -24,7 +24,7 @@ header {
 /* Background de la habitación del tv */
 section {
     height: 47.6em;
-    width: 100%;
+    width: 100vw;
 
     background-color: whitesmoke;
 
@@ -44,7 +44,7 @@ footer {
 #screen {
     margin-left: 3em;
     width: 65em;
-    height: 44em;
+    height: 33em;
     border-radius: 0.4em;
 
     border: grey solid 8px;
@@ -59,46 +59,77 @@ footer {
     background-image: url("../img/imagen\ mundo.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: contain;
+    background-size: cover;
 }
 
 .channel1 {
-    background-image: url("../img/A\ todo\ gas.png");
+    background-image: url("../img/img1.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;
 }
 
 .channel2 {
-    background-color: darkslateblue;
+    background-image: url("../img/img2.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
 }
 
 .channel3 {
-    background-color: greenyellow;
+    background-image: url("../img/img3.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
 }
 
 .channel4 {
-    background-color: gold;
+    background-image: url("../img/img4.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
 }
 
 .channel5 {
-    background-color: coral;
+    background-image: url("../img/img5.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
 }
 
 .channel6 {
-    background-color: violet;
+    background-image: url("../img/img6.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
 }
 
 .channel7 {
-    background-color: forestgreen;
+    background-image: url("../img/img7.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
 }
 
 .channel8 {
-    background-color: indianred;
+    background-image: url("../img/img8.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
 }
 
 .channel9 {
-    background-color: orange;
+    background-image: url("../img/img9.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+}
+
+.channel10 {
+    background-image: url("../img/img10.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
 }
 
 #screenTitle {

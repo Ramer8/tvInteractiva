@@ -35,7 +35,6 @@ if (screenHeader.hidden) {
 
 // Hora y fecha
 setInterval(hora, 1000)
-
 function hora() {
   const date = new Date().toLocaleDateString()
   let hora = new Date().getHours()
@@ -61,7 +60,6 @@ function buttonNumbers() {
     item.addEventListener("click", (evento) => {
       screen.classList.remove(screen.classList[screen.classList.length - 1])
       screen.classList.add("channel" + evento.target.innerHTML)
-      console.log("channel " + evento.target.innerHTML)
       document.getElementById("channelInfo").innerHTML =
         "channel " + evento.target.innerHTML
     })
@@ -168,8 +166,8 @@ function channelButtons() {
             (document.getElementById(
               "channelInfo"
             ).innerHTML = `channel ${contChannel}`),
-            screen.classList.add(`Channel${contChannel}`))
-          : screen.classList.add(`Channel${contChannel}`),
+            screen.classList.add(`channel${contChannel}`))
+          : screen.classList.add(`channel${contChannel}`),
         (document.getElementById(
           "channelInfo"
         ).innerHTML = `channel ${contChannel}`),

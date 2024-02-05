@@ -1,12 +1,12 @@
 # SMART TV APP
 
-This is the second Proyect of the Full Stack Development Bootcamp with Geekshubs Academy. Based only on HTML, CSS and JAVASCRIPT.
+This is the second Project of the Full Stack Development Bootcamp with Geekshubs Academy. Based only on HTML, CSS and JAVASCRIPT.
 
 <details>
   <summary>Content 📝</summary>
   <ol>
     <li><a href="#objetive-🎯 ">Objetive</a></li>
-    <li><a href="#about-a-proyect-🔎-🔎">About to the proyect</a></li>
+    <li><a href="#about-a-proyect-🔎-🔎">About a project</a></li>
     <li><a href="#deploy-🚀">Deploy</a></li>
     <li><a href="#stack">Stack</a></li>
     <li><a href="#local-installation">Installation</a></li>
@@ -24,7 +24,7 @@ This is the second Proyect of the Full Stack Development Bootcamp with Geekshubs
 
 This proyect it's development in HTML, don't need any configuration.
 
-## About a proyect 🔎
+## About a project 🔎
 
 It is a simple web page about thats simulated a smart tv whit his remote control.
 
@@ -64,16 +64,10 @@ It is a simple web page about thats simulated a smart tv whit his remote control
 
 Landing/Home
 <img src="./img/view/landing.png">  
-Main Page
+Another channel
 <img src="./img/view/menu.png">
-Contact
+Volume up function
 <img src="./img/view/contact.png">
-Landing/Home Mobile
-<img src="./img/view/landingMobile.png">
-Menu Mobile
-<img src="./img/view/menuMobile.png">
-Contact Mobile
-<img src="./img/view/contactMobile.png">
 
 ## Contributions
 
