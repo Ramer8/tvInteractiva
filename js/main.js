@@ -2,12 +2,11 @@
 const TEXT_MSG_TIME = 2500
 let screen = document.getElementById("screen") // me trae el div con id frame
 
-const screenHeader = document.getElementById("screenHeader")
+let screenHeader = document.getElementById("screenHeader")
 
 const power = document.getElementById("power")
 
 power.addEventListener("click", (evento) => {
-  console.log(screen.classList)
   if (powerOn) {
     console.log("encendido")
     screen.classList = []
@@ -16,6 +15,8 @@ power.addEventListener("click", (evento) => {
   if (!powerOn) {
     screen.classList = []
     screen.classList.add("powerOff")
+    cleanValues()
+    console.log("apagado")
   }
 })
 // inicialzo bandera encendido/apagado
@@ -25,7 +26,6 @@ function toggle() {
   let screenHeader = document.getElementById("screenHeader")
   powerOn = !powerOn
   screenHeader.hidden = !screenHeader.hidden
-  console.log(powerOn)
 }
 if (screenHeader.hidden) {
   console.log("apagado")
@@ -58,13 +58,17 @@ function buttonNumbers() {
 
   arrayNumbers.map((item) => {
     item.addEventListener("click", (evento) => {
-      screen.classList.remove(screen.classList[screen.classList.length - 1])
-      screen.classList.add("channel" + evento.target.innerHTML)
-      document.getElementById("channelInfo").innerHTML =
-        "channel " + evento.target.innerHTML
+      if (!screenHeader.hidden) {
+        screen.classList.remove(screen.classList[screen.classList.length - 1])
+        screen.classList.add("channel" + evento.target.innerHTML)
+        document.getElementById("channelInfo").innerHTML =
+          "channel " + evento.target.innerHTML
+        channelInfoTimeOut()
+      }
     })
   })
 }
+// }
 let contVolume = 3
 let v
 volume()
@@ -86,23 +90,25 @@ function volume() {
   const volumeButton = document.getElementsByClassName("volume")
 
   volumeButton[0].addEventListener("click", (evento) => {
-    if (evento.target.innerHTML === "V +") {
-      //Sube el volumen
-      contVolume++
-      v = ` 🔊⬆ ${contVolume}`
-      toggleMute = false
-    } else {
-      // Baja el volumen
-      if (contVolume > 0) {
-        contVolume--
-        v = `🔊⬇ ${contVolume}`
+    if (!screenHeader.hidden) {
+      if (evento.target.innerHTML === "V +") {
+        //Sube el volumen
+        contVolume++
+        v = ` 🔊⬆ ${contVolume}`
+        toggleMute = false
       } else {
-        // Pone en "silencio 🔇 "
-        setVolumeIcon()
-        return
+        // Baja el volumen
+        if (contVolume > 0) {
+          contVolume--
+          v = `🔊⬇ ${contVolume}`
+        } else {
+          // Pone en "silencio 🔇 "
+          setVolumeIcon()
+          return
+        }
       }
+      setVolumeIcon()
     }
-    setVolumeIcon()
   })
 }
 // inicializo bandera volumen y memoria volumen
@@ -117,19 +123,26 @@ function mute() {
 }
 // Funcion boton mute
 const muteButton = document.getElementById("mute")
-muteButton.addEventListener("click", () => {
-  toggleMute = !toggleMute
-  // pregunto por estado de bandera mute para silenciar o no
-  toggleMute
-    ? mute()
-    : //si el volumen era 0, al sacar mute se pone en 1
-      //si el volumen !=0, al sacar volumen vuelve al valor anterior
-      (!memoryVolume
-        ? (contVolume = memoryVolume + 1)
-        : (contVolume = memoryVolume),
-      (v = ` 🔊 ${contVolume}`),
-      setVolumeIcon())
-})
+
+setMuteButton()
+
+function setMuteButton() {
+  muteButton.addEventListener("click", () => {
+    if (!screenHeader.hidden) {
+      toggleMute = !toggleMute
+      // pregunto por estado de bandera mute para silenciar o no
+      toggleMute
+        ? mute()
+        : //si el volumen era 0, al sacar mute se pone en 1
+          //si el volumen !=0, al sacar volumen vuelve al valor anterior
+          (!memoryVolume
+            ? (contVolume = memoryVolume + 1)
+            : (contVolume = memoryVolume),
+          (v = ` 🔊 ${contVolume}`),
+          setVolumeIcon())
+    }
+  })
+}
 
 //Inicializo contador de canales
 let channel
@@ -147,41 +160,53 @@ function channelButtons() {
   const channelButton = document.getElementsByClassName("channel")
 
   channelButton[0].addEventListener("click", (evento) => {
-    //pregunta si es channel Up o down?
-    evento.target.innerHTML === "P +"
-      ? // Channel up , incrementa contador y copia valor a la clase channel
-        (channel(),
-        contChannel++,
-        screen.classList.add(`channel${contChannel}`),
-        (document.getElementById(
-          "channelInfo"
-        ).innerHTML = `channel ${contChannel}`),
-        channelInfoTimeOut())
-      : // Channel Down, decrementa contador y copia a clase channel
-        (channel(),
-        contChannel--,
-        // Pregunta si canal es 0 para q no tenga valores negativos.
-        contChannel < 0
-          ? ((contChannel = 9),
-            (document.getElementById(
-              "channelInfo"
-            ).innerHTML = `channel ${contChannel}`),
-            screen.classList.add(`channel${contChannel}`))
-          : screen.classList.add(`channel${contChannel}`),
-        (document.getElementById(
-          "channelInfo"
-        ).innerHTML = `channel ${contChannel}`),
-        channelInfoTimeOut())
+    if (!screenHeader.hidden) {
+      //pregunta si es channel Up o down?
+      evento.target.innerHTML === "P +"
+        ? // Channel up , incrementa contador y copia valor a la clase channel
+          (channel(),
+          contChannel++,
+          screen.classList.add(`channel${contChannel}`),
+          (document.getElementById(
+            "channelInfo"
+          ).innerHTML = `channel ${contChannel}`),
+          channelInfoTimeOut())
+        : // Channel Down, decrementa contador y copia a clase channel
+          (channel(),
+          contChannel--,
+          // Pregunta si canal es 0 para q no tenga valores negativos.
+          contChannel < 0
+            ? ((contChannel = 9),
+              (document.getElementById(
+                "channelInfo"
+              ).innerHTML = `channel ${contChannel}`),
+              screen.classList.add(`channel${contChannel}`))
+            : screen.classList.add(`channel${contChannel}`),
+          (document.getElementById(
+            "channelInfo"
+          ).innerHTML = `channel ${contChannel}`),
+          channelInfoTimeOut())
 
-    function channel() {
-      // saca el ultimo caracter de screen.classList
-      ;(contChannel = screen.classList[0].substring(
-        screen.classList[0].length - 1,
-        screen.classList[0].length
-      )),
-        (screen.classList = [])
-      {
+      function channel() {
+        // saca el ultimo caracter de screen.classList
+        ;(contChannel = screen.classList[0].substring(
+          screen.classList[0].length - 1,
+          screen.classList[0].length
+        )),
+          (screen.classList = [])
+        {
+        }
       }
     }
   })
+}
+
+function cleanValues() {
+  document.getElementById("channelInfo").innerHTML = ""
+  volumeIcon.innerHTML = ""
+  document.getElementById("hora").innerHTML = ""
+  document.getElementById("fecha").innerHTML = ""
+  // screenHeader = document.getElementById("screenHeader")
+  // screenHeader.hidden = !screenHeader.hidden
+  // console.log(screenHeader.hidden)
 }
