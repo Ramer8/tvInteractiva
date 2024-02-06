@@ -22,11 +22,11 @@ This is the second Project of the Full Stack Development Bootcamp with Geekshubs
 
 ## Objetive 🎯
 
-This proyect it's development in HTML, don't need any configuration.
+This project it's development in HTML, don't need any configuration.
 
 ## About a project 🔎
 
-It is a simple web page about thats simulated a smart tv whit his remote control.
+It is a simple web page thats simulates a smart tv whit his remote control.
 
 ## Deploy 🚀
 
@@ -47,10 +47,6 @@ It is a simple web page about thats simulated a smart tv whit his remote control
 </a>
 <a href="https://www.github.com/">
     <img src= "https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
-</a>
-
-<a href="https://www.github.com/">
-    <img src= "https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
  </div>
 

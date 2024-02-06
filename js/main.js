@@ -1,27 +1,35 @@
-//Primero obtenemos todos los elementos de la clase cuadrado u otra en un htmlcollection
 const TEXT_MSG_TIME = 2500
-let screen = document.getElementById("screen") // me trae el div con id frame
 
+// Initialize variables
+
+// Get screen content id, and create his variables
+let screen = document.getElementById("screen")
 let screenHeader = document.getElementById("screenHeader")
 
+// Create power flag
+let powerOn = false
+
+//Get power button id
 const power = document.getElementById("power")
 
 power.addEventListener("click", (evento) => {
   if (powerOn) {
     console.log("encendido")
     screen.classList = []
+    //Set start channel
     screen.classList.add("channel0")
   }
   if (!powerOn) {
     screen.classList = []
+    // Set black screen
     screen.classList.add("powerOff")
+    // Clean classes and values
     cleanValues()
     console.log("apagado")
   }
 })
-// inicialzo bandera encendido/apagado
-let powerOn = false
 
+//Set header content toggle function
 function toggle() {
   let screenHeader = document.getElementById("screenHeader")
   powerOn = !powerOn
@@ -33,34 +41,36 @@ if (screenHeader.hidden) {
   console.log("encendido")
 }
 
-// Hora y fecha
+// Date & hour
 setInterval(hora, 1000)
+
 function hora() {
   const date = new Date().toLocaleDateString()
-  let hora = new Date().getHours()
-  let minutos = new Date().getMinutes()
-  let segundos = new Date().getSeconds()
-  const time = `${hora}:${minutos < 10 ? "0" : ""}${minutos}:${
-    segundos < 10 ? "0" : ""
-  }${segundos}`
-  document.getElementById("hora").innerHTML = time
-  document.getElementById("fecha").innerHTML = date
+  let hour = new Date().getHours()
+  let minutes = new Date().getMinutes()
+  let seconds = new Date().getSeconds()
+  const time = `${hour}:${minutes < 10 ? "0" : ""}${minutes}:${
+    seconds < 10 ? "0" : ""
+  }${seconds}`
+  document.getElementById("hour").innerHTML = time
+  document.getElementById("date").innerHTML = date
 }
 
-// Responde a los numeros del control remoto
+//Numbers button function
 buttonNumbers()
 
 function buttonNumbers() {
   const numbers = document.getElementsByClassName("numbers")
 
   let arrayNumbers = Array.from(numbers)
-  screen = document.getElementById("screen") // me trae el div con id screen
 
   arrayNumbers.map((item) => {
     item.addEventListener("click", (evento) => {
+      // Power button validation with screenHeader id element
       if (!screenHeader.hidden) {
         screen.classList.remove(screen.classList[screen.classList.length - 1])
         screen.classList.add("channel" + evento.target.innerHTML)
+        //Copy channel info to the id element
         document.getElementById("channelInfo").innerHTML =
           "channel " + evento.target.innerHTML
         channelInfoTimeOut()
@@ -68,15 +78,16 @@ function buttonNumbers() {
     })
   })
 }
-// }
-let contVolume = 3
+//Setting start volume level
+let countVolume = 3
+// Create v variable thats contain volume value displayed on screen
 let v
 volume()
 const volumeIcon = document.getElementById("volumeIcon")
 
-// Funcion del temporizador del volumen
+// Volume value time out on screen
 function setVolumeIcon() {
-  contVolume !== 0
+  countVolume !== 0
     ? ((volumeIcon.innerHTML = v),
       setTimeout(() => {
         volumeIcon.innerHTML = ""
@@ -84,7 +95,7 @@ function setVolumeIcon() {
     : (mute(), (toggleMute = true))
 }
 
-// Responde a los botones del volumen
+// Volume button function
 
 function volume() {
   const volumeButton = document.getElementsByClassName("volume")
@@ -92,17 +103,18 @@ function volume() {
   volumeButton[0].addEventListener("click", (evento) => {
     if (!screenHeader.hidden) {
       if (evento.target.innerHTML === "V +") {
-        //Sube el volumen
-        contVolume++
-        v = ` 🔊⬆ ${contVolume}`
+        //Turn up the volumen
+        countVolume++
+        v = ` 🔊⬆ ${countVolume}`
+        //False state toggleMute flag
         toggleMute = false
       } else {
-        // Baja el volumen
-        if (contVolume > 0) {
-          contVolume--
-          v = `🔊⬇ ${contVolume}`
+        // Turn down the volumen
+        if (countVolume > 0) {
+          countVolume--
+          v = `🔊⬇ ${countVolume}`
         } else {
-          // Pone en "silencio 🔇 "
+          // mute 🔇
           setVolumeIcon()
           return
         }
@@ -111,102 +123,102 @@ function volume() {
     }
   })
 }
-// inicializo bandera volumen y memoria volumen
+// Setting toggleMute flag and create memory level value
 let toggleMute = false
 let memoryVolume
 
-// Funcion Mute pone el volumen = 0
+// Mute function, set level volume = 0
 function mute() {
-  memoryVolume = contVolume
-  contVolume = 0
+  memoryVolume = countVolume
+  countVolume = 0
   volumeIcon.innerHTML = "silencio 🔇 "
 }
-// Funcion boton mute
+
 const muteButton = document.getElementById("mute")
 
 setMuteButton()
 
+// Mute button Function
 function setMuteButton() {
   muteButton.addEventListener("click", () => {
     if (!screenHeader.hidden) {
       toggleMute = !toggleMute
-      // pregunto por estado de bandera mute para silenciar o no
+      //Ask about the toggleMute flag state
       toggleMute
         ? mute()
-        : //si el volumen era 0, al sacar mute se pone en 1
-          //si el volumen !=0, al sacar volumen vuelve al valor anterior
+        : //If volume level = 0, when press mute button the volume level = 1
+          // If the volume level != 0, level volume set to the last saved value
           (!memoryVolume
-            ? (contVolume = memoryVolume + 1)
-            : (contVolume = memoryVolume),
-          (v = ` 🔊 ${contVolume}`),
+            ? (countVolume = memoryVolume + 1)
+            : (countVolume = memoryVolume),
+          (v = ` 🔊 ${countVolume}`),
           setVolumeIcon())
     }
   })
 }
 
-//Inicializo contador de canales
+//Counter channel
 let channel
-let contChannel = 0
+let countChannel = 0
 
-//Responde a los botones para cambiar de canal + y -
 channelButtons()
 
+//Channel number time out on screen
 function channelInfoTimeOut() {
   setTimeout(() => {
     document.getElementById("channelInfo").innerHTML = ""
   }, TEXT_MSG_TIME)
 }
+
+// Plus & minus channel buttons function
 function channelButtons() {
   const channelButton = document.getElementsByClassName("channel")
 
   channelButton[0].addEventListener("click", (evento) => {
     if (!screenHeader.hidden) {
-      //pregunta si es channel Up o down?
+      //Question about which button has been pressed P+ or P-
       evento.target.innerHTML === "P +"
-        ? // Channel up , incrementa contador y copia valor a la clase channel
+        ? // Channel up , increase channel counter and copy the channel class displayed on screen
           (channel(),
-          contChannel++,
-          screen.classList.add(`channel${contChannel}`),
+          countChannel++,
+          screen.classList.add(`channel${countChannel}`),
           (document.getElementById(
             "channelInfo"
-          ).innerHTML = `channel ${contChannel}`),
+          ).innerHTML = `channel ${countChannel}`),
           channelInfoTimeOut())
-        : // Channel Down, decrementa contador y copia a clase channel
+        : // Channel Down, decrease channel counter and copy the channel class displayed on a screen
           (channel(),
-          contChannel--,
-          // Pregunta si canal es 0 para q no tenga valores negativos.
-          contChannel < 0
-            ? ((contChannel = 9),
+          countChannel--,
+          // Ask if channel counter =0 to avoid negative values
+          countChannel < 0
+            ? ((countChannel = 9),
+              // Copy channel number displayed on a screen
               (document.getElementById(
                 "channelInfo"
-              ).innerHTML = `channel ${contChannel}`),
-              screen.classList.add(`channel${contChannel}`))
-            : screen.classList.add(`channel${contChannel}`),
+              ).innerHTML = `channel ${countChannel}`),
+              screen.classList.add(`channel${countChannel}`))
+            : screen.classList.add(`channel${countChannel}`),
           (document.getElementById(
             "channelInfo"
-          ).innerHTML = `channel ${contChannel}`),
+          ).innerHTML = `channel ${countChannel}`),
           channelInfoTimeOut())
 
       function channel() {
-        // saca el ultimo caracter de screen.classList
-        ;(contChannel = screen.classList[0].substring(
+        // Remove the last character of the first class of screen id element
+        ;(countChannel = screen.classList[0].substring(
           screen.classList[0].length - 1,
           screen.classList[0].length
         )),
           (screen.classList = [])
-        {
-        }
       }
     }
   })
 }
-
+// Delete all values displayed on screen
 function cleanValues() {
   document.getElementById("channelInfo").innerHTML = ""
   volumeIcon.innerHTML = ""
   document.getElementById("hora").innerHTML = ""
   document.getElementById("fecha").innerHTML = ""
-  // screenHeader = document.getElementById("screenHeader")
-  // screenHeader.hidden = !screenHeader.hidden
-  // console.log(screenHeader.hidden)
+  countChannel = 0
 }

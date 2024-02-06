@@ -21,7 +21,7 @@ header {
     background-color: whitesmoke;
 }
 
-/* Background de la habitación del tv */
+/* TV Room Background*/
 section {
     height: 47.6em;
     width: 100vw;
@@ -33,14 +33,14 @@ section {
     justify-content: center;
 }
 
-/* Footer es la mesa del tv */
+/* Footer is tv table */
 footer {
     height: 6.6em;
     width: 100%;
     background-color: goldenrod;
 }
 
-/* Frame es la pantalla del tv */
+/* Screen is TV display */
 #screen {
     margin-left: 3em;
     width: 65em;
@@ -48,13 +48,14 @@ footer {
     border-radius: 0.4em;
 
     border: grey solid 8px;
-    /* poner de color negro el borde luego */
+    /* then put black color to the border */
 }
 
 .basicScreen {
     background-color: black;
 }
 
+/* Image channel */
 .channel0 {
     background-image: url("../img/imagen\ mundo.png");
     background-repeat: no-repeat;
@@ -151,6 +152,7 @@ footer {
     justify-content: end;
 }
 
+/* Remote control device */
 #remote {
     width: 10em;
     height: 36em;
@@ -225,7 +227,6 @@ footer {
     width: 10em;
 }
 
-/* Ver si se puede agrandar la letra de los botones canal y vol */
 .volume {
     font-size: 1em;
     font-weight: bolder;
@@ -289,14 +290,14 @@ footer {
     transition: 0.2s;
 }
 
+/* Remote control device  */
+/* Screen color on tv power off */
+
 .powerOff {
     background: black;
 }
 
-.start {
-    background-color: darkolivegreen;
-}
-
+/* Volume level message */
 #volumeIcon {
     display: flex;
     flex-direction: row;
