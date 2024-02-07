@@ -38,7 +38,7 @@ footer {
     background-color: goldenrod;
 }
 
-/* Screen is TV display */
+
 #container {
     width: 65em;
     height: 40em;
@@ -50,15 +50,14 @@ footer {
 
 }
 
+/* Screen is TV display */
 #screen {
     margin-left: 2em;
     width: 66em;
     height: 54em;
     border-radius: 0.4em;
-    /* border: thick double black; */
     border: 1mm ridge black;
-    /* border: grey solid 8px; */
-    /* then put black color to the border */
+    background-color: black;
 }
 
 #footerTV {
@@ -168,9 +167,9 @@ footer {
 }
 
 .channel9 {
-    background-image: url("../img/img9.png");
+    background-image: url("../img/crash.gif");
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: local;
     background-size: contain;
 }
 
@@ -182,7 +181,7 @@ footer {
 }
 
 #screenTitle {
-    padding-inline: 2em;
+    padding-inline: 1.5em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -261,6 +260,7 @@ footer {
     opacity: 0.5;
 }
 
+/* Power Button */
 #power {
     background-color: brown;
 }
@@ -333,7 +333,6 @@ footer {
     transition: 0.2s;
 }
 
-/* Remote control device  */
 /* Screen color on tv power off */
 
 .powerOff {
@@ -352,6 +351,7 @@ footer {
     text-shadow: black 4px 0 10px;
 }
 
+/* Channel number message */
 #channelInfo {
     display: flex;
     flex-direction: row;
@@ -377,6 +377,7 @@ footer {
     cursor: pointer;
 }
 
+/* Images source */
 .source1 {
     background-image: url("../img/Prince_of_Persia_1_-_MS-DOS_-_Gameplay_-_Potion.gif");
     background-repeat: no-repeat;
@@ -385,14 +386,15 @@ footer {
 }
 
 .source2 {
-    background-image: url("../img/gta-v-flip.gif");
+    background-image: url("../img//mario-super.gif");
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: local5;
+    background-position: 50% 50%;
     background-size: contain;
 }
 
 .source3 {
-    background-image: url("../img/windows.png");
+    background-image: url("../img/mortal-kombat.gif");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;
@@ -403,6 +405,16 @@ footer {
 
 .source4 {
     background-image: url("../img/yaboirockstar-game.gif");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-size: 100% 100%;
+}
+
+.source5 {
+    background-image: url("../img/home-menu.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;

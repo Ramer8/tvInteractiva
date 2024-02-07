@@ -1,4 +1,6 @@
 const TEXT_MSG_TIME = 2500
+const INFO_CHANNEL_TIME = 3000
+
 // Initialize variables
 
 // Get screen content id, and create his variables
@@ -7,6 +9,8 @@ let screenHeader = document.getElementById("screenHeader")
 let led = document.getElementById("led")
 // Create power flag
 let powerOn = false
+// Get content id of value of channel
+const channelValue = document.getElementById("channelInfo")
 
 //Get power button id
 const power = document.getElementById("power")
@@ -48,15 +52,19 @@ if (screenHeader.hidden) {
 setInterval(hora, 1000)
 
 function hora() {
-  const date = new Date().toLocaleDateString()
-  let hour = new Date().getHours()
-  let minutes = new Date().getMinutes()
-  let seconds = new Date().getSeconds()
-  const time = `${hour}:${minutes < 10 ? "0" : ""}${minutes}:${
-    seconds < 10 ? "0" : ""
-  }${seconds}`
-  document.getElementById("hour").innerHTML = time
-  document.getElementById("date").innerHTML = date
+  if (!screenHeader.hidden) {
+    const date = new Date().toLocaleDateString()
+    let hour = new Date().getHours()
+    let minutes = new Date().getMinutes()
+    let seconds = new Date().getSeconds()
+    const time = `${hour}:${minutes < 10 ? "0" : ""}${minutes}:${
+      seconds < 10 ? "0" : ""
+    }${seconds}`
+    document.getElementById("hour").innerHTML = time
+    document.getElementById("date").innerHTML = date
+  } else {
+    clearInterval(hora, 1000)
+  }
 }
 
 //Numbers button function
@@ -74,8 +82,7 @@ function buttonNumbers() {
         screen.classList.remove(screen.classList[screen.classList.length - 1])
         screen.classList.add("channel" + evento.target.innerHTML)
         //Copy channel info to the id element
-        document.getElementById("channelInfo").innerHTML =
-          "channel " + evento.target.innerHTML
+        channelValue.innerHTML = "channel " + evento.target.innerHTML
         channelInfoTimeOut()
       }
     })
@@ -169,7 +176,7 @@ channelButtons()
 //Channel number time out on screen
 function channelInfoTimeOut() {
   setTimeout(() => {
-    document.getElementById("channelInfo").innerHTML = ""
+    channelValue.innerHTML = ""
   }, TEXT_MSG_TIME)
 }
 
@@ -219,32 +226,75 @@ function channelButtons() {
 }
 // Delete all values displayed on screen
 function cleanValues() {
-  document.getElementById("channelInfo").innerHTML = ""
+  channelValue.innerHTML = ""
   document.getElementById("hour").innerHTML = ""
   document.getElementById("date").innerHTML = ""
 }
-
+// Source button function
 let sourceButton = document.getElementById("source")
-console.log(sourceButton)
-let info = document.getElementById("info")
-console.log(info)
 
+// Hdmi count number
 let count = 0
 sourceButton.addEventListener("click", (evento) => {
   if (!screenHeader.hidden) {
     count++
-    if (count < 5) {
+    if (count < 6) {
       screen.classList.remove(screen.classList[screen.classList.length - 1])
       screen.classList.add("source" + count)
-      document.getElementById("channelInfo").innerHTML = `hdmi ${count}`
+      channelValue.innerHTML = `hdmi ${count}`
+      // Function timer
       channelInfoTimeOut()
-      console.log("source" + count)
     } else {
       count = 1
       screen.classList.remove(screen.classList[screen.classList.length - 1])
       screen.classList.add("source1")
-      document.getElementById("channelInfo").innerHTML = `hdmi ${count}`
+      channelValue.innerHTML = `hdmi ${count}`
       channelInfoTimeOut()
     }
+  }
+})
+
+//Channel List
+const channelList = [
+  { Channel: 1, nombre: "ESPN" },
+  { Channel: 2, nombre: "EngineTV" },
+  { Channel: 3, nombre: "HBOmax" },
+  { Channel: 4, nombre: "Fox" },
+  { Channel: 5, nombre: "YoutubeTV" },
+  { Channel: 6, nombre: "Mtv" },
+  { Channel: 7, nombre: "Paramount" },
+  { Channel: 8, nombre: "Disney+" },
+  { Channel: 9, nombre: "AppleTV" },
+  { Channel: 10, nombre: "WarnerTV" },
+]
+
+//Channel List function to displayed on a screen
+function displayArrayOfObjects(arr, elementId) {
+  const infoListChannel = document.getElementById(elementId)
+  let html = "<ul>"
+  arr.forEach((obj) => {
+    html += "<li>"
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        html += `<strong>${key}:</strong> ${obj[key]} | `
+      }
+    }
+    html = html.slice(0, -3)
+    html += "</li>"
+  })
+  html += "</ul>"
+  infoListChannel.innerHTML = html
+}
+
+const infoListChannel = document.getElementById("infoListChannel")
+let infoButton = document.getElementById("infoButton")
+
+infoButton.addEventListener("click", (evento) => {
+  if (!screenHeader.hidden) {
+    displayArrayOfObjects(channelList, "infoListChannel")
+    //Timer out Channel List
+    setTimeout(() => {
+      infoListChannel.innerHTML = ""
+    }, INFO_CHANNEL_TIME)
   }
 })
