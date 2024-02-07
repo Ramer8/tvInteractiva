@@ -10,6 +10,8 @@ This is the second Project of the Full Stack Development Bootcamp with Geekshubs
     <li><a href="#deploy-🚀">Deploy</a></li>
     <li><a href="#stack">Stack</a></li>
     <li><a href="#view">View</a></li>
+    <li><a href="#coding process">Coding process</a></li>
+    <li><a href="#project explanation">Project explanation</a></li>
     <li><a href="#contributions">Contributions</a></li>
     <li><a href="#license">Licence</a></li>
     <li><a href="#webgraphy">Webgraphy</a></li>
@@ -51,7 +53,7 @@ It is a simple web page thats simulates a smart tv. Remote control has been crea
 
 ## View
 
-Landing/Home
+Landing
 <img src="./img/view/landingPage.png">  
 Power on
 <img src="./img/view/powerOn.png">
@@ -64,9 +66,13 @@ Hdmi + volume up function
 Channel List function
 <img src="./img/view/channelList.png">
 
-Coding process:
+## Coding process
 
-Is a tv smart with his default functions, numeric volume up & down, mute function, channel up & down, channel info and source to connect other devices.
+30 - 35 hours
+
+## Project explanation
+
+Is a tv smart with his main functions like a numeric volume up & down, mute function, channel up & down, channel info and source to connect other devices.
 
 It was been coding in one html file, one js to do the function and one css file to layout
 
