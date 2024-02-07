@@ -223,3 +223,28 @@ function cleanValues() {
   document.getElementById("hour").innerHTML = ""
   document.getElementById("date").innerHTML = ""
 }
+
+let sourceButton = document.getElementById("source")
+console.log(sourceButton)
+let info = document.getElementById("info")
+console.log(info)
+
+let count = 0
+sourceButton.addEventListener("click", (evento) => {
+  if (!screenHeader.hidden) {
+    count++
+    if (count < 5) {
+      screen.classList.remove(screen.classList[screen.classList.length - 1])
+      screen.classList.add("source" + count)
+      document.getElementById("channelInfo").innerHTML = `hdmi ${count}`
+      channelInfoTimeOut()
+      console.log("source" + count)
+    } else {
+      count = 1
+      screen.classList.remove(screen.classList[screen.classList.length - 1])
+      screen.classList.add("source1")
+      document.getElementById("channelInfo").innerHTML = `hdmi ${count}`
+      channelInfoTimeOut()
+    }
+  }
+})

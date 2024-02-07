@@ -104,64 +104,64 @@ footer {
 
 /* Image channel */
 .channel0 {
-    /* background-position-x: 2px 3px 2px 1px; */
     background-image: url("../img/imagen\ mundo.png");
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: local;
     background-size: cover;
 }
 
 .channel1 {
-    background-image: url("../img/img1.png");
+    background-image: url("../img/lionel-messi-messi.gif");
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: contain;
+    background-attachment: local;
+    background-size: cover;
 }
 
 .channel2 {
-    background-image: url("../img/img2.png");
+    background-image: url("../img/drift-car-drift.gif");
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: local;
     background-size: contain;
 }
 
 .channel3 {
-    background-image: url("../img/img3.png");
+    background-image: url("../img/back-to-the-future-back-to-the-past.gif");
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: local;
     background-size: contain;
 }
 
 .channel4 {
-    background-image: url("../img/img4.png");
+    background-image: url("../img/fast-and-furious-tokyo-drift.gif");
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: local;
     background-size: contain;
 }
 
 .channel5 {
-    background-image: url("../img/img5.png");
+    background-image: url("../img/mtv-unplugged-nirvana.gif");
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: local;
     background-size: contain;
+    background-size: 100% 100%;
 }
 
 .channel6 {
-    background-image: url("../img/img6.png");
+    background-image: url("../img/dead-over.gif");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;
 }
 
 .channel7 {
-    background-image: url("../img/img7.png");
+    background-image: url("../img/fast-and-furious-driving-fast.gif");
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: local;
     background-size: contain;
 }
 
 .channel8 {
-    background-image: url("../img/img8.png");
+    background-image: url("../img/ritornoalfuturo-mcfly.gif");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;
@@ -175,7 +175,7 @@ footer {
 }
 
 .channel10 {
-    background-image: url("../img/img10.png");
+    background-image: url("../img/rick-grimes-rick-grimes-the-walking-dead.gif");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;
@@ -375,4 +375,38 @@ footer {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+.source1 {
+    background-image: url("../img/Prince_of_Persia_1_-_MS-DOS_-_Gameplay_-_Potion.gif");
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-size: 100% 100%;
+}
+
+.source2 {
+    background-image: url("../img/gta-v-flip.gif");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+}
+
+.source3 {
+    background-image: url("../img/windows.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-size: 100% 100%;
+}
+
+.source4 {
+    background-image: url("../img/yaboirockstar-game.gif");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-size: 100% 100%;
 }
