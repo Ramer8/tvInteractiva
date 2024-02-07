@@ -1,11 +1,10 @@
 const TEXT_MSG_TIME = 2500
-
 // Initialize variables
 
 // Get screen content id, and create his variables
 let screen = document.getElementById("screen")
 let screenHeader = document.getElementById("screenHeader")
-
+let led = document.getElementById("led")
 // Create power flag
 let powerOn = false
 
@@ -18,12 +17,17 @@ power.addEventListener("click", (evento) => {
     screen.classList = []
     //Set start channel
     screen.classList.add("channel0")
+    led.classList.remove(led.classList[led.classList.length - 1])
+    led.classList.add("green")
+    //led[0].classList
   }
   if (!powerOn) {
     screen.classList = []
     // Set black screen
     screen.classList.add("powerOff")
     // Clean classes and values
+    led.classList.remove(led.classList[led.classList.length - 1])
+    led.classList.add("led")
     cleanValues()
     console.log("apagado")
   }
@@ -31,7 +35,6 @@ power.addEventListener("click", (evento) => {
 
 //Set header content toggle function
 function toggle() {
-  let screenHeader = document.getElementById("screenHeader")
   powerOn = !powerOn
   screenHeader.hidden = !screenHeader.hidden
 }
@@ -217,8 +220,6 @@ function channelButtons() {
 // Delete all values displayed on screen
 function cleanValues() {
   document.getElementById("channelInfo").innerHTML = ""
-  volumeIcon.innerHTML = ""
-  document.getElementById("hora").innerHTML = ""
-  document.getElementById("fecha").innerHTML = ""
-  countChannel = 0
+  document.getElementById("hour").innerHTML = ""
+  document.getElementById("date").innerHTML = ""
 }

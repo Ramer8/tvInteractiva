@@ -11,19 +11,22 @@
   <body>
     <header></header>
     <section>
-      <div id="screen" class="basicScreen">
-        <div id="screenHeader" hidden="false">
-          <div id="screenTitle">
-            <p>Smart TV Connected 🛜</p>
-            <div class="date">
-              <p id="hour"></p>
-              <p id="date"></p>
+      <div id="container">
+        <div id="screen" class="basicScreen">
+          <div id="screenHeader" hidden="false">
+            <div id="screenTitle">
+              <p>Smart TV Connected 🛜</p>
+              <div class="date">
+                <p id="hour"></p>
+                <p id="date"></p>
+              </div>
             </div>
           </div>
+          <div id="volumeIcon"></div>
+          <div id="channelInfo"></div>
         </div>
-
-        <div id="volumeIcon"></div>
-        <div id="channelInfo"></div>
+        <div id="footerTV"><div id="led" class="led"></div></div>
+        <div id="baseTV"></div>
       </div>
 
       <div id="remote">
@@ -44,7 +47,7 @@
                 />
               </svg>
             </div>
-            <div class="circleButtons">source</div>
+            <div id="source" class="circleButtons">source</div>
           </div>
           <div>
             <div id="mute" class="circleButtons">
@@ -84,11 +87,8 @@
           <div class="numbers">7</div>
           <div class="numbers">8</div>
           <div class="numbers">9</div>
-          <div class="numbers"></div>
-          <div class="numbers">0</div>
-          <div class="numbers"></div>
         </div>
-      </div>
+       
     </section>
     <footer></footer>
     <script src="./js/main.js"></script>
