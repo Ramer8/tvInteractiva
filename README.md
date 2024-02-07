@@ -6,10 +6,9 @@ This is the second Project of the Full Stack Development Bootcamp with Geekshubs
   <summary>Content 📝</summary>
   <ol>
     <li><a href="#objetive-🎯 ">Objetive</a></li>
-    <li><a href="#about-a-proyect-🔎-🔎">About a project</a></li>
+    <li><a href="#about-a-project-🔎-🔎">About a project</a></li>
     <li><a href="#deploy-🚀">Deploy</a></li>
     <li><a href="#stack">Stack</a></li>
-    <li><a href="#local-installation">Installation</a></li>
     <li><a href="#view">View</a></li>
     <li><a href="#contributions">Contributions</a></li>
     <li><a href="#license">Licence</a></li>
@@ -22,11 +21,11 @@ This is the second Project of the Full Stack Development Bootcamp with Geekshubs
 
 ## Objetive 🎯
 
-This project it's development in HTML, don't need any configuration.
+Simulated smart tv with gif images, channel, volume and source functions.
 
 ## About a project 🔎
 
-It is a simple web page thats simulates a smart tv whit his remote control.
+It is a simple web page thats simulates a smart tv. Remote control has been created with css layout.
 
 ## Deploy 🚀
 
@@ -50,20 +49,32 @@ It is a simple web page thats simulates a smart tv whit his remote control.
 </a>
  </div>
 
-## Local installation
-
-1. Clone the repository
-2. Install live server extension in Visual Studio Code
-3. From index.html go live to see the web page.
-
 ## View
 
 Landing/Home
-<img src="./img/view/landing.png">  
-Another channel
-<img src="./img/view/menu.png">
-Volume up function
-<img src="./img/view/contact.png">
+<img src="./img/view/landingPage.png">  
+Power on
+<img src="./img/view/powerOn.png">
+Channel up function
+<img src="./img/view/channelUP.png">
+Mute function
+<img src="./img/view/muteOn.png">
+Hdmi + volume up function
+<img src="./img/view/sourceHdmi + volume up.png">
+Channel List function
+<img src="./img/view/channelList.png">
+
+Coding process:
+
+Is a tv smart with his default functions, numeric volume up & down, mute function, channel up & down, channel info and source to connect other devices.
+
+It was been coding in one html file, one js to do the function and one css file to layout
+
+It was made in three files, index.html, main.js to make the functions and styles.css file for layout. I used gif images. The project has no sound and the design is not responsive.
+The channel number is shown on the screen when the buttons are pressed to change channels. When pressing the volume up and volume down button shown the numeric value on the screen
+I have used many functions to perform different tasks.
+None of the buttons work when the TV is off.
+It have a led light to show when the tv is on. Is red when is power off, and green when it working.
 
 ## Contributions
 
