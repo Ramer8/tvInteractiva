@@ -49,9 +49,9 @@ if (screenHeader.hidden) {
 }
 
 // Date & hour
-setInterval(hora, 1000)
+setInterval(hour, 1000)
 
-function hora() {
+function hour() {
   if (!screenHeader.hidden) {
     const date = new Date().toLocaleDateString()
     let hour = new Date().getHours()
@@ -63,7 +63,7 @@ function hora() {
     document.getElementById("hour").innerHTML = time
     document.getElementById("date").innerHTML = date
   } else {
-    clearInterval(hora, 1000)
+    clearInterval(hour, 1000)
   }
 }
 
