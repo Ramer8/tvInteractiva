@@ -1,5 +1,7 @@
 # SMART TV APP
 
+<img src="./img/view/tvIntercativa.gif">
+
 This is the second Project of the Full Stack Development Bootcamp with Geekshubs Academy. Based only on HTML, CSS and JAVASCRIPT.
 
 <details>
